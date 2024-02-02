@@ -1,7 +1,9 @@
 import { Link, Redirect, Tabs } from 'expo-router'
 import { Pressable } from 'react-native'
-import { Text } from 'tamagui'
+import { Button, Text } from 'tamagui'
 import { useSession } from '../../auth/clsx';
+import { Menu, Bell, Clapperboard } from '@tamagui/lucide-icons'
+
 
 export default function TabLayout() {
   const { session, isLoading } = useSession();
@@ -19,28 +21,46 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: 'red',
+        tabBarActiveTintColor: 'white',
+        tabBarInactiveTintColor: '#9AA4B2',
+        tabBarStyle: {
+          backgroundColor: '#112439',
+          height: 90,
+          borderRadius: 20
+        }
       }}
     >
       <Tabs.Screen
         name='index'
         options={{
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => <Text>Hello!</Text>,
-          headerRight: () => (
-            <Link href='/modal' asChild>
-              <Pressable>
-                <Text>Hello!</Text>
-              </Pressable>
-            </Link>
+          headerTitle: '',
+          tabBarIcon: ({ color }) => <Clapperboard color={color} />,
+          headerLeft: () => (
+            <Menu ml={'$3'} color={'white'} />
           ),
+          headerRight: () => (
+            <Bell mr={'$3'} color={'white'} />
+          ),
+          headerStyle: {
+            backgroundColor: '#121926'
+          },
         }}
       />
       <Tabs.Screen
         name='two'
         options={{
           title: 'Tab Two',
-          tabBarIcon: ({ color }) => <Text>Hello!</Text>,
+          headerTitle: '',
+          tabBarIcon: ({ color }) => <Clapperboard color={color} />,
+          headerLeft: () => (
+            <Menu ml={'$3'} color={'white'} />
+          ),
+          headerRight: () => (
+            <Bell mr={'$3'} color={'white'} />
+          ),
+          headerStyle: {
+            backgroundColor: '#121926'
+          },
         }}
       />
     </Tabs>
