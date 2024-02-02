@@ -1,8 +1,21 @@
-import { Link, Tabs } from 'expo-router'
+import { Link, Redirect, Tabs } from 'expo-router'
 import { Pressable } from 'react-native'
 import { Text } from 'tamagui'
+import { useSession } from '../../auth/clsx';
 
 export default function TabLayout() {
+  const { session, isLoading } = useSession();
+
+  if (isLoading) {
+    return <Text>Loading...</Text>;
+  }
+
+  if (!session) {
+    // On web, static rendering will stop here as the user is not authenticated
+    // in the headless Node process that the pages are rendered in.
+    return <Redirect href="/signIn" />;
+  }
+
   return (
     <Tabs
       screenOptions={{
