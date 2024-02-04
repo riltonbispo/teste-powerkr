@@ -1,9 +1,7 @@
 import {
   Avatar,
   Button,
-  Card,
   H3,
-  Paragraph,
   ScrollView,
   SizableText,
   Text,
@@ -15,14 +13,10 @@ import {
 import {
   CircleUserRound,
   PieChart,
-  MessageCircleMore,
-  Calendar,
-  ChevronUp
 } from '@tamagui/lucide-icons'
 
 import { SelectDemoItem } from '../../components/Select'
 import CompromisseCard from '../../components/CompromiseCard'
-import { AnimatedCircularProgress } from 'react-native-circular-progress'
 import CardProgress from '../../components/CardProgress'
 
 export default function TabOneScreen() {
@@ -86,7 +80,7 @@ export default function TabOneScreen() {
             showsHorizontalScrollIndicator={false}
           >
             <XStack gap={'$4'}>
-              <CompromisseCard  date='25 Out' title='Compromisso Título Lorem ipsum dolorsit...' status='hight' />
+              <CompromisseCard date='25 Out' title='Compromisso Título Lorem ipsum dolorsit...' status='hight' />
               <CompromisseCard date='25 Out' title='Compromisso Título Lorem ipsum dolorsit...' status='medium' />
               <CompromisseCard date='25 Out' title='Compromisso Título Lorem ipsum dolorsit...' status='low' />
             </XStack>
@@ -95,12 +89,12 @@ export default function TabOneScreen() {
         <YStack gap='$4'>
           <Text>Compromissos homologados</Text>
           <XStack flexWrap='wrap' gap={'$2'}>
-          <CardProgress progress={60} value={7123} title='Assumidos' />
-          <CardProgress progress={60} value={7123} title='Realizados' />
-          <CardProgress progress={60} value={7123} title='Pontos' />
-          <CardProgress progress={60} value={7123} title='Pontuação Média' />
-          <CardProgress progress={60} value={7123} title='Execução' />
-          <CardProgress progress={60} value={7123} title='Desempenho Médio' />
+            <CardProgress progress={60} value={7123} title='Assumidos' />
+            <CardProgress progress={60} value={7123} title='Realizados' />
+            <CardProgress progress={60} value={7123} title='Pontos' />
+            <CardProgress progress={60} value={7123} title='Pontuação Média' />
+            <CardProgress progress={60} value={7123} title='Execução' />
+            <CardProgress progress={60} value={7123} title='Desempenho Médio' />
           </XStack>
         </YStack>
       </View>
