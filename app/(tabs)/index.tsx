@@ -18,18 +18,13 @@ import {
 import { SelectDemoItem } from '../../components/Select'
 import CompromisseCard from '../../components/CompromiseCard'
 import CardProgress from '../../components/CardProgress'
+import userDetails from '../../data/user'
 
 export default function TabOneScreen() {
-  const userDetails = {
-    name: 'Rilton',
-    fullName: 'Rilton Bispo',
-    company: 'Empresa Fake',
-    avatarUrl: 'https://images.unsplash.com/photo-1548142813-c348350df52b?&w=150&h=150&dpr=2&q=80'
-  }
 
   return (
-    <ScrollView>
-      <View flex={1} paddingHorizontal={24} mb={40} gap={'$6'}>
+    <ScrollView theme={'dark_blue'}>
+      <View  bg={'$background'} paddingHorizontal={24} pb={40} gap={'$6'}>
         <XStack ai="center" jc='space-between' gap="$4" mt='$4'>
           <H3>Olá, {userDetails.name}</H3>
           <SelectDemoItem />
@@ -57,7 +52,7 @@ export default function TabOneScreen() {
           </Button>
 
         </XStack>
-        <XStack bc={'$gray11Dark'} p={'$3'} borderRadius={'$8'} ai={'center'} gap={'$4'}>
+        <XStack p={'$3'} borderRadius={'$8'} ai={'center'} gap={'$4'}>
           <Avatar circular size="$10">
             <Avatar.Image
               accessibilityLabel="Cam"

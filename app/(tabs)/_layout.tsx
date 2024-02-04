@@ -1,8 +1,7 @@
-import { Link, Redirect, Tabs } from 'expo-router'
-import { Pressable } from 'react-native'
-import { Button, Text } from 'tamagui'
+import { Redirect, Tabs } from 'expo-router'
+import { Text } from 'tamagui'
 import { useSession } from '../../auth/clsx';
-import { Menu, Bell, Clapperboard, AlignStartHorizontal, CircleUserRound } from '@tamagui/lucide-icons'
+import { Menu, Bell, AlignStartHorizontal, CircleUserRound } from '@tamagui/lucide-icons'
 
 
 export default function TabLayout() {
@@ -20,6 +19,7 @@ export default function TabLayout() {
 
   return (
     <Tabs
+    
       screenOptions={{
         tabBarActiveTintColor: 'white',
         tabBarInactiveTintColor: '#9AA4B2',
@@ -43,15 +43,17 @@ export default function TabLayout() {
           title: 'Compromissos',
           headerTitle: '',
           tabBarIcon: ({ color }) => <AlignStartHorizontal color={color} />,
-
         }}
       />
       <Tabs.Screen
         name='two'
         options={{
           title: 'Perfil',
-          headerTitle: '',
+          headerTitle: 'Perfil',
+          headerTintColor: 'white',
+          headerTitleAlign: 'center',
           tabBarIcon: ({ color }) => <CircleUserRound color={color} />,
+          headerRight: () => null
         }}
       />
     </Tabs>
