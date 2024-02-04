@@ -2,7 +2,7 @@ import { Link, Redirect, Tabs } from 'expo-router'
 import { Pressable } from 'react-native'
 import { Button, Text } from 'tamagui'
 import { useSession } from '../../auth/clsx';
-import { Menu, Bell, Clapperboard } from '@tamagui/lucide-icons'
+import { Menu, Bell, Clapperboard, AlignStartHorizontal, CircleUserRound } from '@tamagui/lucide-icons'
 
 
 export default function TabLayout() {
@@ -25,42 +25,33 @@ export default function TabLayout() {
         tabBarInactiveTintColor: '#9AA4B2',
         tabBarStyle: {
           backgroundColor: '#112439',
-          height: 90,
-          borderRadius: 20
-        }
+        },
+        headerLeft: () => (
+          <Menu ml={'$3'} color={'white'} />
+        ),
+        headerRight: () => (
+          <Bell mr={'$3'} color={'white'} />
+        ),
+        headerStyle: {
+          backgroundColor: '#121926'
+        },
       }}
     >
       <Tabs.Screen
         name='index'
         options={{
+          title: 'Compromissos',
           headerTitle: '',
-          tabBarIcon: ({ color }) => <Clapperboard color={color} />,
-          headerLeft: () => (
-            <Menu ml={'$3'} color={'white'} />
-          ),
-          headerRight: () => (
-            <Bell mr={'$3'} color={'white'} />
-          ),
-          headerStyle: {
-            backgroundColor: '#121926'
-          },
+          tabBarIcon: ({ color }) => <AlignStartHorizontal color={color} />,
+
         }}
       />
       <Tabs.Screen
         name='two'
         options={{
-          title: 'Tab Two',
+          title: 'Perfil',
           headerTitle: '',
-          tabBarIcon: ({ color }) => <Clapperboard color={color} />,
-          headerLeft: () => (
-            <Menu ml={'$3'} color={'white'} />
-          ),
-          headerRight: () => (
-            <Bell mr={'$3'} color={'white'} />
-          ),
-          headerStyle: {
-            backgroundColor: '#121926'
-          },
+          tabBarIcon: ({ color }) => <CircleUserRound color={color} />,
         }}
       />
     </Tabs>

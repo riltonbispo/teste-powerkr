@@ -10,7 +10,7 @@ type Props = {
 
 const CompromisseCard = ({ title, date, status }: Props) => {
   return (
-    <Card size="$5" bordered h={'$15'} >
+    <Card bordered h={'$12'} maxWidth={'$20'}>
       <Card.Header padded>
         <Paragraph theme="alt2">
           {title}
@@ -33,9 +33,11 @@ const CompromisseCard = ({ title, date, status }: Props) => {
 const ButtonStatus = ({ status }: { status: 'hight' | 'medium' | 'low' }) => {
   return (
     <Button
+      size={'$2'}
+      fontWeight={'bold'}
       borderRadius="$10"
       theme={status === 'hight' ? 'green' : status === 'low' ? 'red' : undefined}
-      icon={status === 'hight' ? <ChevronUp /> : status === 'low' ? <ChevronDown/> : <Minus/>}
+      icon={status === 'hight' ? <ChevronUp /> : status === 'low' ? <ChevronDown /> : <Minus />}
     >
       Purchase
     </Button>
