@@ -13,9 +13,9 @@ export function SelectDemoItem(props: SelectProps) {
   ]
 
   return (
-    <Select value={val} onValueChange={setVal} disablePreventBodyScroll {...props} >
-      <Select.Trigger width={100} iconAfter={ChevronDown} theme={'light'}>
-        <Select.Value placeholder="Something" />
+    <Select value={val} onValueChange={setVal} disablePreventBodyScroll {...props}>
+      <Select.Trigger width={100} iconAfter={<ChevronDown color={'#CDD5DF'}/>} theme={'dark'} bg={'$colorTransparent'} borderColor={'#4B5565'} borderRadius={200}>
+        <Select.Value placeholder="Something" color={'#CDD5DF'} />
       </Select.Trigger>
 
       <Adapt when="sm" platform="touch">

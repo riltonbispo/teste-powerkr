@@ -24,11 +24,11 @@ import { StatusBar } from 'react-native'
 export default function TabOneScreen() {
 
   return (
-    <ScrollView theme={'dark_blue'}>
+    <ScrollView>
       <StatusBar
         barStyle="light-content"
       />
-      <View bg={'$background'} paddingHorizontal={24} pb={40} gap={'$6'}>
+      <View bg={'#121926'} theme={'dark'} paddingHorizontal={24} pb={40} gap={'$6'}>
         <XStack ai="center" jc='space-between' gap="$4" mt='$4'>
           <H3>Olá, {userDetails.name}</H3>
           <SelectDemoItem />
@@ -39,7 +39,9 @@ export default function TabOneScreen() {
             borderRadius={100}
             size="$4"
             icon={<CircleUserRound />}
-            theme={'active'}
+            bg={'#202939'}
+            borderColor={'#4B5565'}
+            variant='outlined'
             f={1}
           >
             Pessoal
@@ -56,7 +58,7 @@ export default function TabOneScreen() {
           </Button>
 
         </XStack>
-        <XStack p={'$3'} borderRadius={'$8'} ai={'center'} gap={'$4'}>
+        <XStack p={'$3'} borderRadius={'$8'} ai={'center'} gap={'$4'} bg={'#202939'}>
           <Avatar circular size="$10">
             <Avatar.Image
               accessibilityLabel="Cam"
@@ -72,7 +74,9 @@ export default function TabOneScreen() {
           </YStack>
         </XStack>
         <YStack gap='$4'>
-          <Text>Compromissos homologados</Text>
+          <SizableText theme="alt1" >
+            Compromissos homologados
+          </SizableText>
           <ScrollView
             horizontal={true}
             borderRadius="$4"
@@ -86,7 +90,9 @@ export default function TabOneScreen() {
           </ScrollView>
         </YStack>
         <YStack gap='$4'>
-          <Text>Compromissos homologados</Text>
+          <SizableText theme="alt1" >
+            Métricas
+          </SizableText>
           <XStack flexWrap='wrap' gap={'$2'}>
             <CardProgress progress={60} value={7123} title='Assumidos' />
             <CardProgress progress={60} value={7123} title='Realizados' />

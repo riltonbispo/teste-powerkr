@@ -1,5 +1,5 @@
 import { AnimatedCircularProgress } from "react-native-circular-progress";
-import { Card, Text } from "tamagui";
+import { Card, SizableText, Text } from "tamagui";
 
 type Props = {
   value: number
@@ -9,10 +9,10 @@ type Props = {
 
 const CardProgress = ({ title, progress, value }: Props) => {
   return (
-    <Card bordered borderRadius={'$7'} flexGrow={1} ai={'center'} p={'$4'}>
+    <Card bordered borderRadius={'$7'} flexGrow={1} ai={'center'} p={'$4'} theme={'dark'} bg={'#202939'} borderWidth={'$0'}>
       <AnimatedCircularProgress
         size={120}
-        width={13}
+        width={10}
         fill={progress}
         tintColor="#44CB4B"
         backgroundColor="#364152"
@@ -24,7 +24,9 @@ const CardProgress = ({ title, progress, value }: Props) => {
           () => (
             <>
               <Text fontWeight={'bold'}>{value}</Text>
-              <Text ta={'center'}>{title}</Text>
+              <SizableText theme="alt1"  ta={'center'} lh={'$2'}>
+                {title}
+              </SizableText>
             </>
 
           )

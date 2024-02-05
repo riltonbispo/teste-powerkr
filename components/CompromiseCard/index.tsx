@@ -1,6 +1,6 @@
 import { MessageCircleMore, Calendar, ChevronUp, Minus, ChevronDown } from '@tamagui/lucide-icons'
 import React from 'react'
-import { Card, Paragraph, XStack, Button, Text } from 'tamagui'
+import { Card, Paragraph, XStack, Button, Text, SizableText } from 'tamagui'
 
 type Props = {
   title: string,
@@ -10,18 +10,20 @@ type Props = {
 
 const CompromisseCard = ({ title, date, status }: Props) => {
   return (
-    <Card bordered h={'$12'} maxWidth={'$20'}>
+    <Card bordered h={'$12'} maxWidth={'$20'} bg={'#202939'} borderWidth={'$0'} theme={'dark'}>
       <Card.Header padded>
-        <Paragraph theme="alt2">
+        <Paragraph>
           {title}
         </Paragraph>
       </Card.Header>
       <Card.Footer padded>
         <XStack flex={1} ai={'center'}>
-          <MessageCircleMore />
+          <MessageCircleMore color={'#F7B519'} />
           <XStack gap={'$2'} f={1} ai={'center'} jc={'center'}>
-            <Calendar />
-            <Text>{date}</Text>
+            <Calendar color={'#9AA4B2'} />
+            <SizableText theme="alt1" >
+              {date}
+            </SizableText>
           </XStack>
           <ButtonStatus status={status} />
         </XStack>
@@ -36,7 +38,8 @@ const ButtonStatus = ({ status }: { status: 'hight' | 'medium' | 'low' }) => {
       size={'$2'}
       fontWeight={'bold'}
       borderRadius="$10"
-      theme={status === 'hight' ? 'green' : status === 'low' ? 'red' : undefined}
+      bg={status === 'hight' ? '#F1FEEB' : status === 'low' ? '#FEDCDC' : '#FFFEEB'}
+      color={status === 'hight' ? '#1D8935' : status === 'low' ? '#8f2c1b' : '#907F0A'}
       icon={status === 'hight' ? <ChevronUp /> : status === 'low' ? <ChevronDown /> : <Minus />}
     >
       Purchase
