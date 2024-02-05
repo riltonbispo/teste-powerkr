@@ -2,7 +2,7 @@ import { Avatar, Button, Label, SizableText, Switch, Text, View, XStack, YStack 
 import userDetails from '../../data/user'
 import React from 'react'
 import { ChevronRight, HelpCircle, Power } from '@tamagui/lucide-icons'
-import { Pressable } from 'react-native'
+import { Pressable, StatusBar } from 'react-native'
 import { useSession } from '../../auth/clsx';
 
 /**
@@ -14,6 +14,9 @@ export default function TabTwoScreen() {
   const { signOut } = useSession();
   return (
     <View theme={'dark'} bg={'$background'} paddingHorizontal={24} gap={'$6'} f={1}>
+            <StatusBar
+        barStyle="light-content"
+      />
       <YStack ai={'center'} mt='$6' gap={'$2'}>
         <Avatar circular size="$10">
           <Avatar.Image

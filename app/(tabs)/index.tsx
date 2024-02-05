@@ -19,12 +19,16 @@ import { SelectDemoItem } from '../../components/Select'
 import CompromisseCard from '../../components/CompromiseCard'
 import CardProgress from '../../components/CardProgress'
 import userDetails from '../../data/user'
+import { StatusBar } from 'react-native'
 
 export default function TabOneScreen() {
 
   return (
     <ScrollView theme={'dark_blue'}>
-      <View  bg={'$background'} paddingHorizontal={24} pb={40} gap={'$6'}>
+      <StatusBar
+        barStyle="light-content"
+      />
+      <View bg={'$background'} paddingHorizontal={24} pb={40} gap={'$6'}>
         <XStack ai="center" jc='space-between' gap="$4" mt='$4'>
           <H3>Olá, {userDetails.name}</H3>
           <SelectDemoItem />
