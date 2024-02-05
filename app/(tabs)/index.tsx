@@ -28,7 +28,7 @@ export default function TabOneScreen() {
       <StatusBar
         barStyle="light-content"
       />
-      <View bg={'#121926'} theme={'dark'} paddingHorizontal={24} pb={40} gap={'$6'}>
+      <View bg={'#121926'} theme={'dark'} paddingHorizontal={24} pb={100} gap={'$6'}>
         <XStack ai="center" jc='space-between' gap="$4" mt='$4'>
           <H3>Olá, {userDetails.name}</H3>
           <SelectDemoItem />

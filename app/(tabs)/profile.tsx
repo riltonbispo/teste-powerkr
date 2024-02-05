@@ -23,7 +23,7 @@ export default function TabTwoScreen() {
           <Avatar.Fallback backgroundColor="$blue10" />
         </Avatar>
         <Text fontSize={'$7'}>{userDetails.fullName}</Text>
-        <SizableText theme="alt2" size="$3">
+        <SizableText theme="alt1" >
           {userDetails.departament}
         </SizableText>
       </YStack>

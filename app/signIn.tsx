@@ -4,11 +4,6 @@ import { router } from 'expo-router';
 import { ImageBackground, StatusBar, } from 'react-native';
 import React from 'react';
 
-/**
- * TODO: 
- *  [] Usar Hookform para validar o login
- */
-
 export default function SignIn() {
   const { signIn } = useSession();
 

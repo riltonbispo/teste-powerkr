@@ -19,12 +19,15 @@ export default function TabLayout() {
 
   return (
     <Tabs
-    
       screenOptions={{
         tabBarActiveTintColor: 'white',
         tabBarInactiveTintColor: '#9AA4B2',
         tabBarStyle: {
           backgroundColor: '#112439',
+          position: 'absolute',
+          borderRadius: 20,
+          height: 60,
+          borderTopWidth: 0,
         },
         headerLeft: () => (
           <Menu ml={'$3'} color={'white'} />
